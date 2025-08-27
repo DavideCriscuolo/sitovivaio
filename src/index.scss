@@ -1,0 +1,204 @@
+.bg_color {
+  background-color: #f8f1de;
+  font-family: "Jost", sans-serif;
+}
+
+.color_txt_org {
+  color: #eb852f;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #f8f1de;
+  .navbar {
+    background-color: #f8f1de;
+  }
+  .navbar-brand {
+    width: 200px;
+  }
+  .nav-link {
+    font-size: 17px;
+    color: #67732f;
+  }
+  .nav-link:hover {
+    color: #eb852f;
+  }
+  .nav-link:active {
+    color: #eb852f;
+  }
+  .nav-link.active:visited {
+    color: #67732f;
+  }
+  .header_lg_bt {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .solo_logo {
+      width: 200px;
+    }
+    img {
+      width: 100%;
+    }
+    .bt_social {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+  }
+}
+
+main {
+  background-color: #f8f1de;
+  .card {
+    background-color: #f8f1de;
+  }
+}
+/* start index */
+
+.home_cover {
+  height: 500px;
+
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("/imgprincipal/v2.jpg");
+  margin-bottom: 30px;
+}
+
+.name_site_desc {
+  border-bottom: 2px #687331 solid;
+  border-top: 2px #687331 solid;
+  .name_site {
+    font-size: 1.8rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-weight: 100;
+    color: #eb852f;
+  }
+  p {
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 5px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+}
+
+.imgparalax {
+  height: 205px;
+  max-width: 100%;
+  background-image: url("/imgprincipal/background_atta.jpg");
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contatti {
+  .social {
+    margin-top: 10px;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+#mappa {
+  width: 80%;
+  height: 500px;
+  border: 0;
+}
+.btn {
+  color: #eb852f;
+}
+
+/* end index */
+
+/* start chi siamo */
+
+.presentazione {
+  flex: 1 1 400px;
+  p {
+    font-size: 17px;
+  }
+
+  .clickcontact {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    .cta {
+      text-decoration: none;
+      color: #eb852f;
+      font-size: 18px;
+    }
+    .cta:hover {
+      background-color: #eb852f;
+      color: white;
+    }
+  }
+}
+
+.slider {
+  flex: 1 1 400px;
+  padding: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.instagram_bg {
+  color: #fc7215;
+}
+.facebook_bg {
+  color: #316bea;
+}
+.whatsapp_bg {
+  color: #25d366;
+}
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(235, 133, 47);
+
+  .footer_lg {
+    height: 100%;
+    font-size: 12px;
+    .solo_logoft {
+      width: 200px;
+    }
+    img {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .info_footer {
+      text-align: center;
+      color: white;
+    }
+    .social_footer {
+      color: white;
+      h3 {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+button:focus:not(:focus-visible) {
+  color: #eb852f;
+}
