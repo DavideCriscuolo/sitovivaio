@@ -7,7 +7,7 @@ export default function HeaderC() {
       <header className="py-3">
         <nav class="navbar navbar-expand-sm navbar-light">
           <div class="container">
-            <NavLink className="navbar-brand" to={"/Home"}>
+            <NavLink className="navbar-brand" to={"/"}>
               <img
                 className="w-100"
                 src="/Logo/LogoSantaCeciliaGarden.png"
@@ -39,7 +39,7 @@ export default function HeaderC() {
                   <HashLink
                     className="nav-link fw-semibold"
                     smooth
-                    to={"/Home#Prodotti"}
+                    to={"/#Prodotti"}
                     scroll={(el) => {
                       const yOffset = -150; // altezza navbar
                       const y =
@@ -56,7 +56,7 @@ export default function HeaderC() {
                   <HashLink
                     className="nav-link fw-semibold"
                     smooth
-                    to={"/Home#Contatti"}
+                    to={"/#Contatti"}
                     scroll={(el) => {
                       const yOffset = -150; // altezza navbar
                       const y =
