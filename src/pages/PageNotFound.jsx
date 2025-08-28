@@ -1,3 +1,9 @@
+import "./../scss/PageNotFound.scss";
 export default function PageNotFound() {
-  return <h1 className="text-center">Pagina non trovata</h1>;
+  return (
+    <main>
+      {" "}
+      <h1 className="text-center">Pagina non trovata</h1>
+    </main>
+  );
 }
