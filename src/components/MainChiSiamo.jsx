@@ -2,6 +2,7 @@ import Info from "./Info";
 import { Link } from "react-router";
 import Slider from "./Slider";
 import { sliderone } from "../data/images";
+import AnimatedRoutes from "./AnimatedRoutes";
 export default function MainChisiamo() {
   return (
     <main>
