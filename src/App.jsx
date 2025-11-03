@@ -4,9 +4,11 @@ import Home from "./pages/Home";
 import Chisiamo from "./pages/ChiSiamo";
 import PageNotFound from "./pages/PageNotFound";
 import AnimatedRoutes from "./components/AnimatedRoutes";
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
+      {import.meta.env.MODE === "production" && <Analytics />}
       <BrowserRouter>
         <AnimatedRoutes>
           <Routes>
