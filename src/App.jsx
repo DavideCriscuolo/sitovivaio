@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router";
+import { MotionConfig } from "framer-motion";
 import DefaultLayout from "./layouts/defaultLayout";
 import Home from "./pages/Home";
 import Chisiamo from "./pages/ChiSiamo";
 import PageNotFound from "./pages/PageNotFound";
-import AnimatedRoutes from "./components/AnimatedRoutes";
 import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
       {import.meta.env.MODE === "production" && <Analytics />}
-      <BrowserRouter>
-        <AnimatedRoutes>
+      <MotionConfig reducedMotion="user">
+        <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>
               <Route path="/" element={<Home />} />
@@ -18,8 +18,8 @@ function App() {
               <Route path="/*" element={<PageNotFound />} />
             </Route>
           </Routes>
-        </AnimatedRoutes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </MotionConfig>
     </>
   );
 }

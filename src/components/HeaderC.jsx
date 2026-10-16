@@ -1,79 +1,82 @@
-import { NavLink } from "react-router";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router";
 import { HashLink } from "react-router-hash-link";
+import { whatsapp } from "../data/contacts";
 
 export default function HeaderC() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  // Sulla home l'header è trasparente sopra la foto finché non si scorre
+  const overHero = location.pathname === "/" && !scrolled && !open;
+
+  useEffect(() => setOpen(false), [location.pathname, location.hash]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <>
-      <header className="py-3">
-        <nav class="navbar navbar-expand-sm navbar-light">
-          <div class="container">
-            <NavLink className="navbar-brand" to={"/"}>
-              <img
-                className="w-100"
-                src="/Logo/LogoSantaCeciliaGarden.png"
-                alt="Logo"
-              />
-            </NavLink>
-            <button
-              class="navbar-toggler d-lg-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapsibleNavId"
-              aria-controls="collapsibleNavId"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse  justify-content-center"
-              id="collapsibleNavId"
-            >
-              <ul class="navbar-nav mt-2 mt-lg-0">
-                <li class="nav-item">
-                  <NavLink className="nav-link fw-semibold" to={"/chisiamo"}>
-                    Chi siamo
-                  </NavLink>
-                </li>
-                <li class="nav-item">
-                  <HashLink
-                    className="nav-link fw-semibold"
-                    smooth
-                    to={"/#Prodotti"}
-                    scroll={(el) => {
-                      const yOffset = -150; // altezza navbar
-                      const y =
-                        el.getBoundingClientRect().top +
-                        window.pageYOffset +
-                        yOffset;
-                      window.scrollTo({ top: y, behavior: "smooth" });
-                    }}
-                  >
-                    I Nostri Prodotti
-                  </HashLink>
-                </li>
-                <li class="nav-item">
-                  <HashLink
-                    className="nav-link fw-semibold"
-                    smooth
-                    to={"/#Contatti"}
-                    scroll={(el) => {
-                      const yOffset = -150; // altezza navbar
-                      const y =
-                        el.getBoundingClientRect().top +
-                        window.pageYOffset +
-                        yOffset;
-                      window.scrollTo({ top: y, behavior: "smooth" });
-                    }}
-                  >
-                    Contatti
-                  </HashLink>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <header className={`site-header${overHero ? " site-header--over" : ""}`}>
+      <div className="site-header__inner">
+        <NavLink className="site-header__brand" to="/">
+          <img
+            className="site-header__logo site-header__logo--color"
+            src="/Logo/LogoSvgcolor.svg"
+            alt="Santa Cecilia Garden, home"
+            width="200"
+            height="50"
+          />
+          <img
+            className="site-header__logo site-header__logo--white"
+            src="/Logo/Logo_bianco.png"
+            alt=""
+            width="200"
+            height="50"
+          />
+        </NavLink>
+
+        <button
+          className="site-header__toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="site-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="visually-hidden">
+            {open ? "Chiudi il menu" : "Apri il menu"}
+          </span>
+          <span className="site-header__bars" aria-hidden="true" />
+        </button>
+
+        <nav
+          id="site-nav"
+          className={`site-nav${open ? " is-open" : ""}`}
+          aria-label="Principale"
+        >
+          <NavLink className="site-nav__link" to="/chisiamo">
+            Chi siamo
+          </NavLink>
+          <HashLink className="site-nav__link" smooth to="/#Prodotti">
+            Le piante
+          </HashLink>
+          <HashLink className="site-nav__link" smooth to="/#Contatti">
+            Contatti
+          </HashLink>
+          <a
+            className="btn btn--orange site-nav__cta"
+            href={whatsapp}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Scrivici su WhatsApp
+          </a>
         </nav>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

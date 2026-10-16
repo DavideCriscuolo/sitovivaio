@@ -1,29 +1,20 @@
+import { piva } from "../data/contacts";
+
 export default function FooterC() {
   return (
-    <footer>
-      <div class="footer_lg ">
-        <div className="container-fluid h-100">
-          {" "}
-          <div className="row h-100">
-            {" "}
-            <div className="col d-flex justify-content-center align-items-center">
-              <div className="solo_logoft ">
-                {" "}
-                <img
-                  src="/Logo/Logo_bianco.png"
-                  alt="Logo Santa Cecilia Garden"
-                />
-              </div>
-            </div>
-            <div className="col d-flex justify-content-center align-items-center">
-              <div className="info_footer">
-                <div className="p iva">
-                  <span>P.iva 03878430655</span>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-        </div>
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <img
+          src="/Logo/Logo_bianco.png"
+          alt="Vivai Piante Santa Cecilia Garden di Caputo Valter"
+          width="200"
+          loading="lazy"
+        />
+        <p>
+          Vivai Piante Santa Cecilia Garden di Caputo Valter
+          <br />
+          P. IVA {piva}
+        </p>
       </div>
     </footer>
   );
