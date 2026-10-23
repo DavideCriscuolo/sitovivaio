@@ -343,7 +343,8 @@ button {
   display: flex;
   align-items: flex-end;
   min-height: max(36rem, 100svh);
-  margin-top: calc(var(--header-h) * -1);
+  // +1px: il bordo inferiore dell'header occupa spazio, altrimenti resta una riga chiara in cima
+  margin-top: calc((var(--header-h) + 1px) * -1);
   overflow: hidden;
   color: var(--white);
   background: var(--olive-deep);
@@ -765,8 +766,8 @@ button {
 .about__media {
   position: sticky;
   top: calc(var(--header-h) + 1.5rem);
-  height: calc(100svh - var(--header-h) - 3rem);
-  min-height: 28rem;
+  // stesso formato della foto di famiglia (4:3), così nessuno viene tagliato
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--leaf-deep);
@@ -812,8 +813,6 @@ button {
 
   .about__media {
     position: static;
-    height: 22rem;
-    min-height: 0;
   }
 
   .about__text {

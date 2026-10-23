@@ -12,8 +12,8 @@ export default function MainChisiamo() {
       <section className="about">
         <div className="about__media">
           <img
-            src="/imgprincipal/eriche-1200.webp"
-            alt="Eriche fiorite sotto la serra del vivaio"
+            src="/img_sliderhome/Img_sliderone/1.webp"
+            alt="I tre fratelli titolari del vivaio sotto la serra"
           />
         </div>
         <div className="about__text">
